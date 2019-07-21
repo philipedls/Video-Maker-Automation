@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:philipedls/Video-Maker-Automation.git",
   "author": "Philipe <philipesoares@cc.ci.ufpb.br>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "readline-sync": "^1.4.9"
+  }
 }
