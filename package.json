@@ -1,0 +1,8 @@
+{
+  "name": "Video-Maker-Automation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:philipedls/Video-Maker-Automation.git",
+  "author": "Philipe <philipesoares@cc.ci.ufpb.br>",
+  "license": "MIT"
+}
