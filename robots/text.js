@@ -1,19 +1,20 @@
 const algorithmia = require('algorithmia')
-const algorithmiaApiKey = require('../credentials/algorithmia.json').apiKey
 const sentenceBoundaryDetection = require('sbd')
+const state = require('./state')
+const algorithmiaApiKey = require('../credentials/algorithmia.json').apiKey
 
 const watsonApiKey = require('../credentials/watson-nlu.json').apikey
 const NaturalLanguageUnderstandingV1 = require('ibm-watson/natural-language-understanding/v1.js')
 
-const naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
+let naturalLanguageUnderstanding = new NaturalLanguageUnderstandingV1({
     version: '2019-07-12',
     iam_apikey: watsonApiKey,
     url: 'https://gateway.watsonplatform.net/natural-language-understanding/api'
 })
 
-async function robot(content) {
+async function robot() {
   console.log('> [text-robot] Starting...')
-  // const content = state.load()
+  const content = state.load()
 
   await fetchContentFromWikipedia(content)
   sanitizeContent(content)
@@ -21,7 +22,7 @@ async function robot(content) {
   limitMaximumSentences(content)
   await fetchKeywordsOfAllSentences(content)
 
-  // state.save(content)
+  state.save(content)
 
   async function fetchContentFromWikipedia(content) {
     console.log('> [text-robot] Fetching content from Wikipedia')
