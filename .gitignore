@@ -1,13 +1,5 @@
-# credentials
+.vscode
 credentials/*.json
-
-# Modules of Node
-node_modules/
-
-# Yarn-integrity
-node_modules/.yarn-integrity
-
-# Yarn Log's
+node_modules
 yarn-error.log
-
 content.json
