@@ -6,7 +6,10 @@
   "author": "Philipe <philipesoares@cc.ci.ufpb.br>",
   "license": "MIT",
   "dependencies": {
+    "@google-cloud/language": "^3.2.4",
     "algorithmia": "^0.3.10",
+    "file-system": "^2.2.2",
+    "ibm-watson": "^4.3.0",
     "readline-sync": "^1.4.9",
     "sbd": "^1.0.16"
   }
