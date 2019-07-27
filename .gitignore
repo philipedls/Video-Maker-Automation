@@ -1,9 +1,12 @@
 # credentials
 credentials/*.json
 
-# Yarn-integrity
-.yarn-integrity
-
-# node_modules
+# Modules of Node
 node_modules/
+
+# Yarn-integrity
+node_modules/.yarn-integrity
+
+# Yarn Log's
+yarn-error.log
 
