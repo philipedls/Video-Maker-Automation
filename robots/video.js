@@ -5,13 +5,18 @@ const path = require('path')
 const rootPath = path.resolve(__dirname, '..')
 
 async function robot() {
+    console.log('> [video-robot] Starting...')
     const content = state.load()
 
     await convertAllImages(content)
     await createAllSentenceImages(content)
     await createYoutubeThumbnail()
+    console.log('> [video-robot] After CreateAfterEffectsScript function')
     await createAfterEffectsScrip(content)
+    console.log('> [video-robot] After renderVideoWithAfterEffects function')
     await renderVideoWithAfterEffects()
+
+    console.log('> [video-robot] Saving Content... Finish...')
     state.save(content)
 
     async function convertAllImages(content) {
@@ -128,11 +133,16 @@ async function robot() {
               return reject(error)
             }
           })
+          console.log('> [video-robot] Youtbe Thumbnail created!')
+
+          resolve()
         })
       }
 
       async function createAfterEffectsScrip(content) {
+        console.log('> [video-robot] Saving... Script After Effects')
         await state.saveScript(content)
+        console.log('> [video-robot] Save script After Effects!')
       }
 
       async function renderVideoWithAfterEffects() {

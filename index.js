@@ -3,7 +3,8 @@ const robots ={
     text: require('./robots/text'),
     state: require('./robots/state'),
     image: require('./robots/image'),
-    video: require('./robots/video')
+    video: require('./robots/video'),
+    youtube: require('./robots/youtube')
 };
 
 async function start() {
@@ -11,6 +12,6 @@ async function start() {
     await robots.text()
     await robots.image()
     await robots.video()
-    console.dir(robots.state.load(), { depth: null })
+    await robots.youtube()
 };
 start();
