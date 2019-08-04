@@ -27,6 +27,7 @@ async function robot () {
   
         content.sentences[sentenceIndex].images = await fetchGoogleAndReturnImagesLinks(query)
         content.sentences[sentenceIndex].googleSearchQuery = query
+      }
       
     }
 
