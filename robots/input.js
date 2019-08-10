@@ -9,6 +9,7 @@ function robot() {
     content.searchTerm = askAndReturnSearchTerm()
     content.prefixes = askAndReturnPrefix()
     content.lang = askAndReturnLanguage()
+    content.renderOption = askAndReturnRenderOption()
     state.save(content)
     
     function askAndReturnLanguage() {
@@ -29,6 +30,14 @@ function robot() {
         const selectedPrefixText = prefixesPTBR[selectedPrefixIndex]
     
         return selectedPrefixText
+    }
+
+    function askAndReturnRenderOption() {
+        const options = ['After-Effects', 'Video-Show']
+        const selectedOption = readline.keyInSelect(options, 'Choose one option to render video')
+        const selectedOptionText = options[selectedOption]
+
+        return selectedOptionText
     }
 }
 

@@ -24,7 +24,7 @@ async function robot() {
 
     async function startWebServer() {
       return new Promise((resolve, reject) => {
-        const port = 5000
+        const port = 8080
         const app = express()
 
         const server = app.listen(port, () => {
@@ -142,14 +142,15 @@ async function robot() {
 
     function onUploadProgress(event) {
       const progress = Math.round( (event.bytesRead / videoFileSize) * 100 )
-      if (progress === 0) {
-        console.log(`> [youtube-robot] ${progress}% completed`)    
+      if (currentProgress === 0) {
+        console.log(`> [youtube-robot] ${progress}% completed`)
+        currentProgress++    
       }
-      else if (progress > currentProgress) {
-        console.log(`> [youtube-robot] ${progress}% completed`)   
+      else if (progress === currentProgress) {
+        console.log(`> [youtube-robot] ${progress}% completed`) 
+        currentProgress++  
       }
     }
-
   }
 
   async function uploadThumbnail(videoInformation) {
