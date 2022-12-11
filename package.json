@@ -10,7 +10,7 @@
     "@ffprobe-installer/ffprobe": "^1.0.12",
     "@google-cloud/language": "^3.2.4",
     "algorithmia": "^0.3.10",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "file-system": "^2.2.2",
     "fluent-ffmpeg": "^2.1.2",
     "gm": "^1.23.1",
